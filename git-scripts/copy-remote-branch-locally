@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo These are your branches: 
+
+git  branch #shows you local branches
+
+echo these are your remote branches: 
+
+git  branch -a #reveals "hidden" remote branches 
+
+echo Which remote branch that you do NOT already have locally would you like to copy locally? Write only the branch name. 
+
+read remobranch #makes the branch name a variable 
+
+git checkout -b $remobranch origin/$remobranch
+
+echo These are your LOCAL branches now: 
+
+git  branch #basically to show the copy was successful 
+

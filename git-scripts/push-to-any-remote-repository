@@ -1,0 +1,17 @@
+#!/bin/bash
+
+read -r -p 'Commit message: ' desc 		 # prompt user for commit message
+
+echo Type the remote repository to push to. 	 # prompts user to figure out which repository they should commit to
+
+read repo					# makes users repository a variable 
+
+git add .                          	        # track all files
+
+git add -u                                      # track deletes
+
+git commit -m "$desc"                           # commit with message
+
+echo Type the remote repository to push to.     # prompts user to figure out which repository they should commit to
+
+git push origin $repo				#pushes commits to the user selected repository

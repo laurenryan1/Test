@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#this script is for use if you push something incorrect to github, and want to roll back to the commit before your mistake 
+
+echo What is the hash of the last GOOD commit? In other words, what 'state' do you want github to go back to? Usually this is the commit prior to your commit that you want to remove. Type the hash here. 
+
+
+read hash #makes hash number a usuable variable 
+
+echo What branch did you mess up on? 
+
+read branch #makes branch a usuable variable 
+
+git reset --hard $hash 
+
+git push origin -f $branch 
+

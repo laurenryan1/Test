@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo To use this function, you should have just pushed from your local branch to your remote branch, and you want to push a specific commit, not the whole branch, to the master. If so, go look at the commit you just made, and find the hash number. Enter it here. 
+
+read hash #makes the hash number into a useable variable 
+
+git checkout master 
+
+git cherry-pick $hash
+
+git push origin master
